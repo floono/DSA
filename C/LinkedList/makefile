@@ -13,3 +13,6 @@ linked_list.o: linked_list.c linked_list.h
 
 clean:
 	@rm -f $(OBJ)
+
+leakcheck:
+	valgrind --leak-check=full ./program
