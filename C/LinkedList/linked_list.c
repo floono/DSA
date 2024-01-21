@@ -30,9 +30,44 @@ void addNode(LinkedList* list, int data)
 
 void removeFirst(LinkedList* list)
 {
-    ListNode* temp = list->head;
-    list->head = list->head->next;
-    free(temp);
+    if(list->head == NULL || list->tail == NULL)
+    {
+        perror("List is empty.");
+    }
+    else
+    {
+        ListNode* temp = list->head;
+        list->head = list->head->next;
+        free(temp);
+    }
+}
+
+void removeLast(LinkedList* list)
+{
+    if(list->head == NULL || list->tail == NULL)
+    {
+        perror("List is empty.");
+    }
+    else
+    {
+        ListNode* temp1 = list->head;
+        ListNode* temp2 = temp1->next;
+        if(temp2 == NULL)
+        {
+            free(temp1);
+        }
+        else
+        {
+            while(temp2->next != NULL)
+            {
+                temp1 = temp2;
+                temp2 = temp2->next;
+            }
+            temp1->next = NULL;
+            list->tail = temp1;
+            free(temp2);
+        }
+    }
 }
 
 void debugPrint(LinkedList* list)

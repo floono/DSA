@@ -14,6 +14,7 @@ int main()
         printf("Please select an option:\n");
         printf("1. > Add a node\n");
         printf("2. > Remove first node\n");
+        printf("3. > Remove last node\n");
         printf("4. > Display linked list info\n");
         printf("0. > Exit\n");
 
@@ -31,6 +32,9 @@ int main()
                 break;
             case 2:
                 removeFirst(list);
+                break;
+            case 3:
+                removeLast(list);
                 break;
             case 4:
                 debugPrint(list);
