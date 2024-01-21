@@ -70,6 +70,19 @@ void removeLast(LinkedList* list)
     }
 }
 
+void freeList(LinkedList* list)
+{
+    ListNode* temp1 = list->head;
+    ListNode* temp2;
+    while(temp1 != NULL)
+    {
+        temp2 = temp1;
+        temp1 = temp1->next;
+        free(temp2);
+    }
+    free(list);
+}
+
 void debugPrint(LinkedList* list)
 {
     ListNode* currentNode = list->head;

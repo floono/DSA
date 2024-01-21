@@ -24,6 +24,7 @@ int main()
         {
             case 0:
                 printf("Goodbye!\n");
+                freeList(list);
                 break;
             case 1:
                 printf("Please enter an integer for the node.\n");

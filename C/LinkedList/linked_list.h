@@ -19,6 +19,7 @@ LinkedList* createList();
 void addNode(LinkedList* list, int data);
 void removeFirst(LinkedList* list);
 void removeLast(LinkedList* list);
+void freeList(LinkedList* list);
 void debugPrint(LinkedList* list);
 
 #endif
