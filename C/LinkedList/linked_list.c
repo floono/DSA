@@ -28,6 +28,13 @@ void addNode(LinkedList* list, int data)
     }
 }
 
+void removeFirst(LinkedList* list)
+{
+    ListNode* temp = list->head;
+    list->head = list->head->next;
+    free(temp);
+}
+
 void debugPrint(LinkedList* list)
 {
     ListNode* currentNode = list->head;
