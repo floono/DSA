@@ -3,7 +3,7 @@
 
 struct ListNode
 {
-    int data;
+    void* data;
     struct ListNode* next;
 };
 typedef struct ListNode ListNode;
@@ -16,7 +16,7 @@ struct LinkedList
 typedef struct LinkedList LinkedList;
 
 LinkedList* createList();
-void addNode(LinkedList* list, int data);
+void addNode(LinkedList* list, void* data);
 void debugPrint(LinkedList* list);
 
 #endif

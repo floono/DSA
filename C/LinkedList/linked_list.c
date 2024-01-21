@@ -10,7 +10,7 @@ LinkedList* createList()
     return list;
 }
 
-void addNode(LinkedList* list, int data)
+void addNode(LinkedList* list, void* data)
 {
     ListNode* newNode = (ListNode*)malloc(sizeof(ListNode));
     newNode->data = data;
@@ -33,7 +33,7 @@ void debugPrint(LinkedList* list)
     ListNode* currentNode = list->head;
     for(int i = 0; currentNode != NULL; i++)
     {
-        printf("NODE %i: %i\n", i, currentNode->data);
+        printf("NODE %i: %i\n", i, *(int*)currentNode->data);
         currentNode = currentNode->next;
     }
 }

@@ -3,11 +3,12 @@
 int main()
 {
     LinkedList* list = createList(2);
-    addNode(list, 5);
-    addNode(list, 12);
-    addNode(list, 15);
-    addNode(list, 8);
-    addNode(list, 3);
+    int a = 5;
+    addNode(list, (void*)&a);
+    addNode(list, (void*)&a);
+    addNode(list, (void*)&a);
+    addNode(list, (void*)&a);
+    addNode(list, (void*)&a);
     debugPrint(list);
 
     return 0;
