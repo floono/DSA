@@ -30,11 +30,11 @@ void addNode(LinkedList* list, int data)
 
 void removeFirst(LinkedList* list)
 {
-    if(list->head == NULL || list->tail == NULL)
+    if(list->head == NULL && list->tail == NULL) // if list is empty
     {
         perror("List is empty.");
     }
-    else
+    else // if list is not empty
     {
         ListNode* temp = list->head;
         list->head = list->head->next;
@@ -44,19 +44,19 @@ void removeFirst(LinkedList* list)
 
 void removeLast(LinkedList* list)
 {
-    if(list->head == NULL || list->tail == NULL)
+    if(list->head == NULL && list->tail == NULL) // if list is empty
     {
         perror("List is empty.");
     }
-    else
+    else // if list is not empty
     {
         ListNode* temp1 = list->head;
         ListNode* temp2 = temp1->next;
-        if(temp2 == NULL)
+        if(temp2 == NULL) // if there is only one node left in the list
         {
             free(temp1);
         }
-        else
+        else // if there is more than one node left in the list
         {
             while(temp2->next != NULL)
             {
