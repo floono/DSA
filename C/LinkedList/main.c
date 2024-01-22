@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include "linked_list.h"
 
+void pressAnyToCont()
+{
+    printf("Press anything to continue\n");
+    getchar();
+    getchar();
+}
+
 int main()
 {
     int mainMenuChoice = -1;
@@ -32,16 +39,18 @@ int main()
                 addNode(list, dataInput);
                 break;
             case 2:
-                removeFirst(list);
+                dataInput = removeFirst(list).data;
+                printf("Data value: %i was removed.\n", dataInput);
+                pressAnyToCont();
                 break;
             case 3:
-                removeLast(list);
+                dataInput = removeLast(list).data;
+                printf("Data value: %i was removed.\n", dataInput);
+                pressAnyToCont();
                 break;
             case 4:
                 debugPrint(list);
-                printf("Press anything to continue\n");
-                getchar();
-                getchar();
+                pressAnyToCont();
                 break;
         }
     }
